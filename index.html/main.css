@@ -40,4 +40,5 @@ body{
     height: 400px;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
+    
 }
