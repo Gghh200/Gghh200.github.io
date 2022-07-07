@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en"></html>
     <head>
+        <link rel="stylesheet" href="dice.css">
         <title>Warhammer 40k Dice roller</title>
     </head>
     <body>
-        <h3 style="font-family:verdana">Welcome to the dice page.</h3>
-        <div>
+        <h3 style="font-family:verdana">Welcome to the dice page.</h3><br/>
             <label for="d6">Enter number of d6:</label>
             <input type="text" id="d6" /> <br/>
             <label for="d3">Enter number of d3:</label>
-            <input type="text" id="d3" /> <br/>
+            <input type="text" id="d3" /> <br/><br/>
             <button id="button">Roll</button>
-            <div id="result"></div>
-            <div id="result2"></div>
-        </div>
+            <p id="result"></p>
+            <p id="result2"></p>
         <script>
             function getDieRolls(d6Rolls, d3Rolls) {
                 var dieRolls = {
