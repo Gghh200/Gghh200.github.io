@@ -1,0 +1,28 @@
+input {
+    color: whitesmoke;
+    background: transparent;
+    border-color: whitesmoke;
+    font-size: 20px;
+}
+body{
+    font-size: 20px;
+    color: white;
+    background: url("https://storage.googleapis.com/spikeybits-staging-bucket/2017/09/warhammer-world-retail-dice.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    text-align: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    width: 500px;
+    margin-right: 35%;
+    margin-left: 37%;
+    margin-top: 15%;
+}
+button{
+    color: whitesmoke;
+    background: transparent;
+    border-color: whitesmoke;
+    font-size: 20px;
+}
