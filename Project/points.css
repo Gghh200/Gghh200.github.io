@@ -1,0 +1,41 @@
+input {
+    color: whitesmoke;
+    background: transparent;
+    border-color: whitesmoke;
+    font-size: 15px;
+}
+body{
+    font-size: 15px;
+    color: white;
+    background: url("https://images.wallpapersden.com/image/download/warhammer-40k_a2xraGyUmZqaraWkpJRobWllrWdpZWU.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    text-align: center;
+}
+div{
+    text-align: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    height: 200px;
+    width: 400px;
+    margin-right: 35%;
+    margin-left: 37%;
+}
+/* div1{
+    text-align: left;
+    background-color: aqua;
+}
+div2{
+    text-align: right;
+    background-color: aqua;
+}
+div3{
+    text-align: left;
+    background-color: aqua;
+}
+div4{
+    text-align: right;
+    background-color: aqua;
+} */

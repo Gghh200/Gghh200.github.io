@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>Warhammer 40k Tracker</title>
+            <link rel="stylesheet" href="points.css">
+            <style>
+                input {
+                    background: transparent;
+                    border: none;
+                }
+            </style>
+    </head>
+    <body>
+        <div>
+            <h2>Welcome to the points section</h2>
+            <p>Other sections are</p>
+            <a href="file:///C:/Users/training.user/Documents/Work%20experiance/Project/cp%20page.html">CP calc</a>
+            <a href="file:///C:/Users/training.user/Documents/Work%20experiance/Project/dice%20page.html">Dice</a>
+            <h3>The maximum number of points is:</h3>
+            <h2 id="result"></h2>
+        </div>
+        <div1>
+            <p id="10"></p>
+            <input id="100" type="number"/><br/>
+            <p id="p1"></p>
+        </div1>
+        <div2>
+            <p id="20"></p>
+            <input id="200" type="number"/><br/>
+            <p id="p2"></p>
+        </div2>
+        <div3>
+            <p id="30"></p>
+            <input id="300" type="number"/><br/>
+            <p id="p3"></p>
+        <div3>
+        <div4>
+            <p id="40"></p>
+            <input id="400" type="number"/><br/>
+            <p id="p4"></p>
+        </div4>
+        <script>
+            function pointscalc(e){
+                tpoints1 = e
+                tpoints2= e
+                tpoints3 = e
+                tpoints4 = e
+                var play1 = document.getElementById((100).toString())
+                var play2 = document.getElementById((200).toString())
+                var play3 = document.getElementById((300).toString())
+                var play4 = document.getElementById((400).toString())
+                var p1 = document.getElementById('p1')
+                var p2 = document.getElementById('p2')
+                var p3 = document.getElementById('p3')
+                var p4 = document.getElementById('p4')
+                    play1.addEventListener('keypress', function(event) {
+                        if (event.keyCode == 13) {
+                            player1 = play1.value
+                            if (tpoints1 < 0) {
+                                tpoints1 = parseInt(tpoints1) + parseInt(player1)
+                                p1.innerText = ('Player 1 has '+tpoints1+' points available')
+                            } else {
+                                tpoints1 = parseInt(tpoints1) - parseInt(player1)
+                                p1.innerText = ('Player 1 has '+tpoints1+' points available')
+                                if (tpoints1 < 0) {
+                                alert("Player1's has gone "+(tpoints1 * -1 )+' points over enter points for wargear removed to regain them')
+                                }
+                            }
+                        }
+                    });
+                    play2.addEventListener('keypress', function(event) {
+                        if (event.keyCode == 13) {
+                            player2 = play2.value
+                            if (tpoints2 < 0) {
+                                tpoints2 = parseInt(tpoints2) + parseInt(player2)
+                                p2.innerText = ('Player 2 has '+tpoints2+' points available')
+                            } else {
+                                tpoints2 = parseInt(tpoints2) - parseInt(player2)
+                                p2.innerText = ('Player 2 has '+tpoints2+' points available')
+                                if (tpoints2 < 0) {
+                                    alert("Player2's has gone "+(tpoints2 * -1 )+' points over enter points for wargear removed to regain them')
+                                }
+                            }
+                        }
+                    });
+                    play3.addEventListener('keypress', function(event) {
+                        if (event.keyCode == 13) {
+                            player3 = play3.value
+                            if (tpoints3 < 0) {
+                                tpoints3 = parseInt(tpoints3) + parseInt(player3)
+                                p3.innerText = ('Player 3 has '+tpoints3+' points available')
+                            } else {
+                                tpoints3 = parseInt(tpoints3) - parseInt(player3)
+                                p3.innerText = ('Player 3 has '+tpoints3+' points available')
+                                if(tpoints3 < 0){
+                                    alert("Player3's has gone "+(tpoints3 * -1 )+' points over enter points for wargear removed to regain them')
+                                }
+                            }
+                        }
+                    });
+                    play4.addEventListener('keypress', function(event) {
+                        if (event.keyCode == 13) {
+                            player4 = play4.value
+                            if (tpoints4 < 0) {
+                                tpoints4 = parseInt(tpoints4) + parseInt(player4)
+                                p4.innerText = ('Player 4 has '+tpoints4+' points available')
+                            } else {
+                                tpoints4 = parseInt(tpoints4) - parseInt(player4)
+                                p4.innerText = ('Player 4 has '+tpoints4+' points available')
+                                if (tpoints4 < 0) {
+                                    alert("Player4's has gone "+(tpoints4 * -1 )+' points over enter points for wargear removed to regain them')
+                                }
+                            }
+                        }
+                    });
+                }
+                var numplayers = localStorage.getItem("players")
+                var selectSize = localStorage.getItem("selectSize")
+                var results = document.getElementById("result");
+                results.innerText = selectSize
+                for (var i = 1; i < (numplayers + 1) / 10; i++) {
+                    var x = document.getElementById((i*10).toString());
+                    x.innerText = ('Please enter cost of model + wargear below press enter to enter')
+                }
+                pointscalc(selectSize);
+        </script>
+    </body>
+</html>

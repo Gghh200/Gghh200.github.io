@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Warhammer 40k Tracker</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <h2>Welcome to Warhammer 40k Tracker!</h2>
+        <div>
+            <label for="playercon">Enter number of players: </label>
+            <input type="text" id="playercon"  required/><br/><br/>
+            <label for="size">Choose game size:</label>
+            <select name="gsize" id="size">
+            <option value="Please select a game mode">Select</option>
+            <option value="500">Combat Patrol</option>
+            <option value="1000">Incursion</option>
+            <option value="2000">Strike Force</option>
+            <option value="3000">Onslaught</option>
+            </select><br/><br/>
+            <button id="submit">Start game</button>
+        </div>
+        <script>
+            c1 = 0
+            c2 = 0
+            document.getElementById("submit").addEventListener("click", function(evt) {
+                var playercon = document.getElementById('playercon').value;
+                var selectSize = document.getElementById('size').value;
+                if(isNaN(playercon)||(playercon >= 5)||(playercon <= 1)||(selectSize === 'Please select a game mode')){
+                    alert('Please enter a number between 2 and 4 and select a game mode')
+                }
+                else{
+                    localStorage.setItem("players",playercon);
+                    localStorage.setItem("selectSize",selectSize);
+                    window.open("points page.html")
+                }
+            });
+        </script>
+    </body>
+</html>

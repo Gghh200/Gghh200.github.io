@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+    <head>
+        <title>Warhammer 40k Dice roller</title>
+    </head>
+    <body>
+        <h3 style="font-family:verdana">Welcome to the dice page.</h3>
+        <div>
+            <label for="d6">Enter number of d6:</label>
+            <input type="text" id="d6" /> <br/>
+            <label for="d3">Enter number of d3:</label>
+            <input type="text" id="d3" /> <br/>
+            <button id="button">Roll</button>
+            <div id="result"></div>
+            <div id="result2"></div>
+        </div>
+        <script>
+            function getDieRolls(d6Rolls, d3Rolls) {
+                var dieRolls = {
+                    d6: [],
+                    d3: []
+                }
+
+
+                var x = 0;
+                while(x <= (d6Rolls - 1)) {
+                    let d6 = Math.floor((Math.random() * 6) + 1);
+                    dieRolls.d6.push(d6)
+                    x=x+1
+                }
+
+                var a = 0;
+                while(a <= (d3Rolls - 1)){
+                    let d3 = Math.floor((Math.random() * 3) + 1);
+                    dieRolls.d3.push(d3)
+                    a=a+1
+                }
+
+                return dieRolls
+            }
+
+            document.getElementById("button").addEventListener("click", function(evt) {
+                var d6 = parseInt(document.getElementById('d6').value);
+                var d3 = parseInt(document.getElementById('d3').value);
+
+                var dieRolls = getDieRolls(d6, d3);
+                var result = document.getElementById("result");
+
+                var d6HtmlToAppend = [];
+                d6HtmlToAppend += "d6: ";
+                for (var i = 0; i < dieRolls.d6.length; i++) {
+                    d6HtmlToAppend += dieRolls.d6[i] + ", ";
+                }
+
+                var d3HtmlToAppend = [];
+                d3HtmlToAppend = "d3: ";
+                for (var i = 0; i < dieRolls.d3.length; i++) {
+                    d3HtmlToAppend += dieRolls.d3[i] + ", ";
+                }
+                var results = document.getElementById("result");
+                var results2 = document.getElementById("result2");
+                results.innerText = d6HtmlToAppend
+                results2.innerText = d3HtmlToAppend
+            })
+
+        </script>
+    </body>
+</html>
