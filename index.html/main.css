@@ -38,7 +38,7 @@ body{
     background-position: center;
     width: 600px;
     height: 400px;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    
+    -webkit-backdrop-filter: blur(2.5px);
+    backdrop-filter: blur(2.5px);
+
 }
