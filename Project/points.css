@@ -3,6 +3,7 @@ input {
     background: transparent;
     border-color: whitesmoke;
     font-size: 15px;
+    width: 50%;
 }
 body{
     font-size: 15px;
@@ -27,19 +28,3 @@ div{
 a{
     color: whitesmoke;
 }
-/* div1{
-    text-align: left;
-    background-color: aqua;
-}
-div2{
-    text-align: right;
-    background-color: aqua;
-}
-div3{
-    text-align: left;
-    background-color: aqua;
-}
-div4{
-    text-align: right;
-    background-color: aqua;
-} */
