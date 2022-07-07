@@ -1,0 +1,31 @@
+input {
+    color: whitesmoke;
+    background: transparent;
+    border-color: transparent;
+    font-size: 15px;
+}
+body{
+    font-size: 15px;
+    color: white;
+    background: url("https://www.rxwallpaper.site/wp-content/uploads/warhammer-40000-dawn-of-war-vip-wallpaper-hd-wallpapers-for.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    text-align: center;
+    -webkit-backdrop-filter: blur(2.5px);
+    backdrop-filter: blur(2.5px);
+}
+div{
+    text-align: center;
+    -webkit-backdrop-filter: blur(2.5px);
+    backdrop-filter: blur(2.5px);
+    height: 50px;
+    width: 400px;
+    margin-right: 35%;
+    margin-left: 37%;
+    margin-top: 9.5%;
+}
+a{
+    color: whitesmoke;
+}
