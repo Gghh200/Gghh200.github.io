@@ -16,8 +16,8 @@ body{
 }
 div{
     text-align: center;
-    -webkit-backdrop-filter: blur(2.5px);
-    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     height: 100px;
     width: 400px;
     margin-right: 35%;
