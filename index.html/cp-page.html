@@ -39,10 +39,10 @@
                 else if (selectSize === '2000'){
                     cp=('12')
                 }
-                else{
+                else if(selectSize === '3000'){
                     cp=('18s')
                 }
-            };
+            }
             function cpdis(cp){
                  tcp1 = cp
                  tcp2= cp
@@ -108,12 +108,12 @@
                 var numplayers = localStorage.getItem("players")
                 var selectSize = localStorage.getItem("selectSize")
                 var results = document.getElementById("result");
-                cpav = cp(selectSize)
-                console.log(cp)
                 for (var i = 1; i < (numplayers + 1) / 10; i++) {
                     var x = document.getElementById((i*10).toString());
                     x.innerText = ('Player '+i+"'s CP available")
                 }
+                cpav = cp(selectSize)
+                console.log(cp)
                 cpdis(cp);
                 results.innerText = cp
         </script>
