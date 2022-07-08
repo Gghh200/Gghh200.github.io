@@ -11,19 +11,23 @@
             <input type="text" id="d6" /> <br/>
             <label for="d3">Enter number of d3:</label>
             <input type="text" id="d3" /> <br/>
-            <label for="hit">Enter BS: </label>
-            <input type="text" id="hit" /> <br/><br/>
-            <button id="button">Roll</button><br/><br/>
-            <button id="hbutton">Roll to hit</button>
+            <label for="hit">Enter number to hit: </label>
+            <input type="text" id="hit" /> <br/>
+            <label for="wound">Enter number to wound: </label>
+            <input type="text" id="wound" /> <br/>
+            <label for="ap">Enter number to save: </label>
+            <input type="text" id="ap" /> <br/><br/>
+            <button id="button">Roll</button><br/>
+
             <p id="result"></p>
             <p id="result2"></p>
+            <p id="result3"></p>
         <script>
             function getDieRolls(d6Rolls, d3Rolls) {
                 var dieRolls = {
                     d6: [],
                     d3: []
                 }
-
 
                 var x = 0;
                 while(x <= (d6Rolls - 1)) {
@@ -41,22 +45,47 @@
 
                 return dieRolls
             }
-             function hits(bs, d6HtmlToAppend){
-                newd6 = []
-                var d6HtmlToAppend = d6HtmlToAppend
-                var bs = bs
-                console.log(d6HtmlToAppend)
-                for(c = 0; c <= (d6HtmlToAppend.length); c++){
+
+            function hits(bs, d6HtmlToAppend){
+                var newd6 = []
+                for(c = 0; c < d6HtmlToAppend.length; c++){
                     if(isNaN (d6HtmlToAppend[c]) != true){
-                        console.log(d6HtmlToAppend)
                         if((d6HtmlToAppend[c]) >= (bs)) {
                             newd6 += d6HtmlToAppend[c]
                         }  
                     }
-                return newd6
                 }
+                return newd6
              }
+            function wound(wounds, newd6){
+                var mewwound = []
+                for(c = 0; c < newd6.length; c++){
+                    if(isNaN (newd6[c]) != true){
+                        if((newd6[c]) >= (wounds)) {
+                            mewwound += newd6[c]
+                        }  
+                    }
+                }
+                console.log(mewwound)
+                return mewwound
+             }
+            function apa(ap,wounds){
+                var newap = []
+                for(c = 0; c < wounds.length; c++){
+                    if(isNaN (wounds[c]) != true){
+                        if((wounds[c]) >= (wounds)) {
+                            newap += wounds[c]
+                        }  
+                    }
+                }
+                console.log(newap)
+                var x = newap.length
+                return x
+             }
+
             document.getElementById("button").addEventListener("click", function(evt) {
+                x=0
+                while(x > 4)
                 var d6 = parseInt(document.getElementById('d6').value);
                 var d3 = parseInt(document.getElementById('d3').value);
 
@@ -77,7 +106,6 @@
                 var bs = document.getElementById("bs");
                 results.innerText = ('d6 '+d6HtmlToAppend)
                 results2.innerText = ('d3: '+d3HtmlToAppend)
-            document.getElementById("hbutton").addEventListener("click", function(e) {
                 var d6 = parseInt(document.getElementById('d6').value)
 
                 var dieRolls = getDieRolls(d6);
@@ -87,10 +115,25 @@
                 for (var i = 0; i < dieRolls.d6.length; i++) {
                     d6HtmlToAppend += dieRolls.d6[i] + ",";
                 }
-                var bs = document.getElementById("bs").value;
-                hits(bs,d6HtmlToAppend)
-                console.log(newd6)
-            })
+                if(x == 1):{
+                    console.log(d6HtmlToAppend)
+                    var bs = document.getElementById("hit").value;
+                    console.log(hits(bs,d6HtmlToAppend))
+                    newd6 = hits(bs,d6HtmlToAppend)
+                    x = x + 1
+                }
+                if(x == 2){
+                    var ws = document.getElementById("wound").value;
+                    console.log(wound(ws,newd6))
+                    wounds = wound(ws,newd6)
+                }
+                if(x == 3){
+                    var ap = document.getElementById("ap").value;
+                    console.log(wound(ap,wounds))
+                    var aps = apa(ap,wounds)
+                    var results3 = document.getElementById("result3");
+                    results3.innerText = (aps+' shots have gone through')
+                }
         })
 
         </script>
